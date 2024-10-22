@@ -1,0 +1,81 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+.drawer {
+	width: 250px;
+	height: 100%;
+	background-color: #333;
+	color: white;
+	position: fixed;
+	top: 0;
+	right: -250px; /* مخفي خارج الشاشة من اليمين */
+	transition: right 0.3s ease; /* تأثير الانتقال */
+	opacity: 1;
+	padding: 20px;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* ظل من اليمين */
+}
+@media (max-width: 768px) {
+	#drawer {
+		/* top: -1000px; */
+		opacity: 0;
+		transition: 0.5s;
+		z-index: -5555;
+	}
+}
+#drawer.active {
+	opacity: 1;
+	transition: 0.5s;
+	z-index: 1;
+	/* top: 100%; */
+}
+
+.nav {
+	list-style-type: none;
+	padding: 0;
+}
+
+.nav li {
+	margin: 15px 0;
+}
+
+.nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+.submenu ul {
+	list-style-type: none;
+	padding-left: 20px; /* مسافة لتمييز القوائم الفرعية */
+}
+
+button#toggleDrawer {
+	position: absolute;
+	margin-left: 77%;
+	margin-top: 25px;
+	padding: 2px 12px;
+	font-size: 36px;
+	background-color: #f1b825; /* لون خلفية الزر */
+	color: white; /* لون النص */
+	border: none; /* إزالة الحدود */
+	border-radius: 10px; /* زوايا مستديرة */
+	cursor: pointer; /* تغيير المؤشر عند المرور فوق الزر */
+	transition: background-color 0.3s, transform 0.9s; /* تأثيرات الانتقال */
+	font-family: "Arial", sans-serif; /* خط */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل */
+	display: none;
+}
+@media (max-width: 768px) {
+	button#toggleDrawer {
+		display: block;
+	}
+}
+button:hover {
+	background-color: #d19e1e; /* لون خلفية عند المرور */
+	transform: scale(1.05); /* تكبير الزر عند المرور */
+}
+
+button:focus {
+	outline: none; /* إزالة الإطار الافتراضي عند التركيز */
+}
