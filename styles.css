@@ -36,7 +36,11 @@ body {
 	list-style-type: none;
 	padding: 0;
 }
-
+@media (max-width: 768px) {
+	.nav {
+		height: 100px;
+	}
+}
 .nav a {
 	color: white;
 	text-decoration: none;
@@ -68,12 +72,15 @@ button#toggleDrawer {
 	button#toggleDrawer {
 		display: block;
 	}
+	#drawer {
+		position: absolute;
+	}
 }
-button:hover {
+button#toggleDrawer:hover {
 	background-color: #d19e1e; /* لون خلفية عند المرور */
 	transform: scale(1.05); /* تكبير الزر عند المرور */
 }
 
-button:focus {
+button#toggleDrawer:focus {
 	outline: none; /* إزالة الإطار الافتراضي عند التركيز */
 }
