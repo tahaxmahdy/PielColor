@@ -56,29 +56,32 @@ button#toggleDrawer {
 	position: absolute;
 	margin-left: 77%;
 	margin-top: 25px;
-	padding: 2px 12px;
-	font-size: 36px;
+	padding: 10px 20px; /* زيادة حجم الزر */
+	font-size: 24px; /* حجم خط أصغر قليلاً */
 	background-color: #f1b825; /* لون خلفية الزر */
 	color: white; /* لون النص */
 	border: none; /* إزالة الحدود */
-	border-radius: 10px; /* زوايا مستديرة */
+	border-radius: 25px; /* زوايا مستديرة أكبر */
 	cursor: pointer; /* تغيير المؤشر عند المرور فوق الزر */
-	transition: background-color 0.3s, transform 0.9s; /* تأثيرات الانتقال */
+	transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* تأثيرات الانتقال */
 	font-family: "Arial", sans-serif; /* خط */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ظل */
-	display: none;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* ظل أكثر وضوحاً */
+	display: none; /* إخفاء الزر في الشاشات الأكبر */
 }
+
 @media (max-width: 768px) {
 	button#toggleDrawer {
-		display: block;
+		display: block; /* عرض الزر في الشاشات الأصغر */
 	}
 	#drawer {
-		position: absolute;
+		position: absolute; /* تحديد موقع الدرج */
 	}
 }
+
 button#toggleDrawer:hover {
-	background-color: #d19e1e; /* لون خلفية عند المرور */
-	transform: scale(1.05); /* تكبير الزر عند المرور */
+	background-color: #cd9c1e; /* لون خلفية عند المرور */
+	transform: scale(1.1); /* تكبير الزر عند المرور */
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* ظل أكبر عند المرور */
 }
 
 button#toggleDrawer:focus {
