@@ -1,0 +1,1476 @@
+body {
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+/* تنسيق الزر العائم الفاخر */
+.floating-btn {
+  position: fixed; /* يجعله ثابتًا في المكان */
+  bottom: 20px; /* المسافة من أسفل الصفحة */
+  right: 20px; /* المسافة من يمين الصفحة */
+  background-color: #b29d5d; /* لون الخلفية الفاخر */
+  color: white; /* لون النص */
+  padding: 12px 25px; /* المسافة الداخلية */
+  font-size: 16px; /* حجم الخط */
+  font-family: "Arial", sans-serif; /* خط بسيط وأنيق */
+  font-weight: 600; /* جعل الخط سميكًا */
+  text-decoration: none; /* إزالة التسطير من الرابط */
+  border-radius: 25px; /* جعل الزر ذو حواف مستديرة */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* الظل الناعم */
+  text-align: center; /* محاذاة النص في المنتصف */
+  display: inline-block;
+  transition: all 0.3s ease-in-out; /* إضافة تأثيرات التغيير */
+  z-index: 9999; /* التأكد من أن الزر فوق جميع العناصر الأخرى */
+  cursor: pointer; /* تغيير المؤشر ليظهر كزر قابل للنقر */
+
+  /* إضافة الحركة عند تحميل الصفحة */
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* حركة الزر عند التحميل */
+@keyframes slideUp {
+  0% {
+    bottom: -100px; /* الزر يبدأ من أسفل الصفحة */
+    opacity: 0; /* الزر غير مرئي */
+  }
+  100% {
+    bottom: 20px; /* الزر يتحرك إلى أسفل اليمين */
+    opacity: 1; /* الزر يصبح مرئي */
+  }
+}
+
+.floating-btn:hover {
+  background-color: #a17c47; /* تغيير اللون عند التمرير بالماوس */
+  transform: translateY(-5px); /* رفع الزر قليلاً عند التمرير */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* زيادة تأثير الظل */
+}
+
+.floating-btn:active {
+  transform: translateY(0); /* العودة إلى الوضع الطبيعي عند الضغط */
+}
+
+/* تنسيق عنوان القسم */
+#products .section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 80px;
+  font-size: 32px; /* تكبير حجم الخط */
+  font-weight: 700; /* جعل الخط عريض */
+  color: #333; /* لون أكثر دقة */
+  text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
+  letter-spacing: 2px; /* تباعد بين الحروف لإضفاء طابع أنيق */
+  position: relative;
+}
+
+#products .section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: darkgoldenrod; /* خط تحت العنوان بلون أزرق */
+}
+
+/* تصميم العناصر الفردية */
+#products .item {
+  margin-bottom: 30px;
+  margin-left: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثير التمرير */
+}
+
+/* تأثير عند التمرير على العنصر */
+#products .item:hover {
+  transform: translateY(-10px); /* رفع العنصر عند التمرير */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* إضافة ظل أكبر عند التمرير */
+}
+
+/* تصميم الصور */
+#products .item .thumb img {
+  width: 90%;
+  height: auto;
+  border-radius: 8px; /* إضافة حواف دائرية للصور */
+  transition: transform 0.3s ease; /* إضافة تأثير التكبير */
+}
+
+/* تكبير الصورة عند التمرير */
+#products .item:hover .thumb img {
+  transform: scale(1.05); /* تكبير الصورة بنسبة صغيرة */
+}
+
+/* تنسيق المحتوى داخل العنصر */
+#products .item .down-content {
+  padding-top: 20px;
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  border-radius: 8px; /* إضافة حواف دائرية للمحتوى */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* إضافة تأثيرات التمرير */
+}
+
+/* تأثير عند التمرير على المحتوى */
+#products .item:hover .down-content {
+  transform: translateY(-5px); /* رفع المحتوى قليلاً عند التمرير */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* إضافة ظل أكبر عند التمرير */
+}
+
+/* تنسيق العناوين داخل المحتوى */
+#products .item .down-content h4 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: color 0.3s ease; /* تأثير التغيير في اللون */
+}
+
+/* تغيير اللون عند التمرير */
+#products .item:hover .down-content h4 {
+  color: darkgoldenrod; /* تغيير اللون إلى الأزرق عند التمرير */
+}
+
+/* تنسيق الأسعار */
+#products .item .down-content span {
+  font-size: 18px;
+  color: #a1a1a1;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* تنسيق النجوم */
+#products .item .down-content ul.stars {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+#products .item .down-content ul.stars li {
+  display: inline;
+  font-size: 14px;
+  color: #f39c12; /* لون النجوم */
+}
+
+/* تنسيق محتوى hover */
+#products .item .thumb .hover-content {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  bottom: -60px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+/* إظهار hover عند التمرير */
+#products .item .thumb:hover .hover-content {
+  bottom: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* تصميم الأزرار داخل hover */
+#products .item .thumb .hover-content ul li {
+  display: inline;
+  margin: 0px 15px;
+}
+
+#products .item .thumb .hover-content ul li a {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  color: #2a2a2a;
+  background-color: #fff;
+  border-radius: 50%; /* حواف دائرية للأزرار */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل للأزرار */
+  transition: all 0.3s ease; /* تأثير التمرير */
+}
+
+/* تأثير عند التمرير على الأزرار */
+#products .item .thumb .hover-content ul li a:hover {
+  background-color: gold; /* تغيير اللون إلى الأزرق */
+  color: #fff; /* تغيير لون النص إلى أبيض */
+  transform: scale(1.1); /* تكبير الزر قليلاً عند التمرير */
+}
+
+/* تنسيق التصفح */
+#products .pagination {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#products .pagination ul li {
+  display: inline;
+  margin: 0px 5px;
+}
+
+#products .pagination ul li a {
+  width: 44px;
+  height: 44px;
+  border: 1px solid gold; /* حدود أزرق */
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  color: gold; /* لون النص الأزرق */
+  border-radius: 50%; /* حواف دائرية للأزرار */
+  transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير على أزرار التصفح */
+#products .pagination ul li a:hover,
+#products .pagination ul li.active a {
+  background-color: gold; /* تغيير الخلفية إلى الأزرق */
+  color: #fff; /* تغيير اللون إلى الأبيض */
+  transform: scale(1.1); /* تكبير الزر عند التمرير */
+}
+
+.our-team {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 90px;
+  border-top: 3px dotted #eee;
+}
+
+.our-team .section-heading {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.our-team .section-heading h2 {
+  margin-bottom: 10px;
+}
+
+.our-team .team-item .thumb {
+  position: relative;
+}
+
+.our-team .team-item .thumb img {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.our-team .team-item .thumb .hover-effect {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.our-team .team-item .thumb:hover .hover-effect {
+  opacity: 1;
+  visibility: visible;
+}
+
+.our-team .team-item .thumb .hover-effect .inner-content {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  transform: translateY(-22px);
+}
+
+.our-team .team-item .thumb .hover-effect .inner-content ul li {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.our-team .team-item .thumb .hover-effect .inner-content ul li a {
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  color: #2a2a2a;
+  display: inline-block;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.our-team .team-item .thumb .hover-effect .inner-content ul li a:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.our-team .team-item .down-content {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.our-team .team-item .down-content h4 {
+  font-size: 24px;
+  color: #2a2a2a;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.our-team .team-item .down-content span {
+  font-size: 14px;
+  color: #a1a1a1;
+  font-weight: 500;
+  display: block;
+  font-style: italic;
+}
+
+/* تنسيق القسم */
+#men {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  border-bottom: 3px dotted #eee;
+  background-color: #fafafa; /* خلفية فاتحة للقسم */
+}
+
+/* تنسيق العنوان */
+#men .section-heading {
+  margin-bottom: 60px;
+  font-size: 32px; /* تكبير حجم الخط */
+  font-weight: 700; /* جعل الخط عريض */
+  color: #333; /* لون دقيق */
+  text-transform: uppercase; /* تحويل النص إلى حروف كبيرة */
+  letter-spacing: 2px; /* تباعد بين الحروف */
+  text-align: center;
+  position: relative;
+}
+
+/* خط تحت العنوان */
+#men .section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: darkgoldenrod; /* خط أزرق تحت العنوان */
+}
+
+/* تصميم العناصر */
+#men .item {
+  margin-bottom: 30px;
+  margin-left: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير التمرير */
+}
+
+/* تأثير عند التمرير على العنصر */
+#men .item:hover {
+  transform: translateY(-10px); /* رفع العنصر عند التمرير */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* إضافة ظل أكبر */
+}
+
+/* تصميم محتوى العنصر */
+#men .item .down-content {
+  padding-top: 30px;
+  position: relative;
+  z-index: 3;
+  background-color: #fff;
+  border-radius: 8px; /* حواف دائرية للمحتوى */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير التمرير */
+}
+
+/* تأثير عند التمرير على المحتوى */
+#men .item:hover .down-content {
+  transform: translateY(-5px); /* رفع المحتوى قليلاً */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* إضافة ظل أكبر */
+}
+
+/* تنسيق العنوان داخل المحتوى */
+#men .item .down-content h4 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+/* تغيير اللون عند التمرير */
+#men .item:hover .down-content h4 {
+  color: darkgoldenrod; /* تغيير اللون إلى الأزرق */
+}
+
+/* تنسيق الأسعار */
+#men .item .down-content span {
+  font-size: 18px;
+  color: #a1a1a1;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* تنسيق النجوم */
+#men .item .down-content ul.stars {
+  position: absolute;
+  right: 0;
+  top: 20px;
+}
+
+#men .item .down-content ul.stars li {
+  display: inline;
+  font-size: 14px;
+  color: #f39c12; /* لون النجوم */
+}
+
+/* تصميم محتوى hover */
+#men .item .thumb .hover-content {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  bottom: -60px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+/* إظهار محتوى hover عند التمرير */
+#men .item .thumb:hover .hover-content {
+  bottom: 30px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* تصميم الأزرار داخل hover */
+#men .item .thumb .hover-content ul li {
+  display: inline;
+  margin: 0px 15px;
+}
+
+#men .item .thumb .hover-content ul li a {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  color: #2a2a2a;
+  background-color: #fff;
+  border-radius: 50%; /* حواف دائرية للأزرار */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل للأزرار */
+  transition: all 0.3s ease; /* تأثير التمرير */
+}
+
+/* تأثير عند التمرير على الأزرار */
+#men .item .thumb .hover-content ul li a:hover {
+  background-color: #3498db; /* تغيير الخلفية إلى الأزرق */
+  color: #fff; /* تغيير النص إلى أبيض */
+  transform: scale(1.1); /* تكبير الزر عند التمرير */
+}
+
+/* تصميم التنقل بين العناصر (Owl Carousel) */
+#men .owl-nav {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  transform: translateY(-25px);
+}
+
+#men .owl-dots {
+  display: none;
+}
+
+#men .owl-nav .owl-prev {
+  position: absolute;
+  left: -80px;
+  outline: none;
+}
+
+/* تأثير التمرير على السهم السابق */
+#men .owl-nav .owl-prev:before {
+  display: inline-block;
+  font-family: "FontAwesome";
+  color: #2a2a2a;
+  font-size: 25px;
+  font-weight: 700;
+  content: "\f104";
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  line-height: 48px;
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير على السهم السابق */
+#men .owl-nav .owl-prev:hover {
+  opacity: 1;
+  background-color: #3498db;
+  color: #fff;
+}
+
+#men .owl-nav .owl-next {
+  opacity: 0.75;
+  transition: all 0.5s;
+}
+
+#men .owl-nav .owl-next:hover {
+  opacity: 1;
+}
+
+#men .owl-nav .owl-next {
+  outline: none;
+  position: absolute;
+  right: -85px;
+}
+
+/* تأثير التمرير على السهم التالي */
+#men .owl-nav .owl-next:before {
+  display: inline-block;
+  font-family: "FontAwesome";
+  color: #2a2a2a;
+  font-size: 25px;
+  font-weight: 700;
+  content: "\f105";
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  line-height: 48px;
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+/* تأثير عند التمرير على السهم التالي */
+#men .owl-nav .owl-next:hover {
+  opacity: 1;
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* تنسيق الحاوية العامة */
+.timeline {
+  width: 100%;
+  padding: 40px 0;
+  position: relative;
+  background-color: #fcfcff; /* خلفية ناعمة */
+}
+
+/* تصميم قائمة الخط الزمني */
+.timeline ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+/* تصميم العناصر بشكل رأسي */
+.timeline ul li {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 50px; /* يبعد المحتوى عن الخط */
+  transition: transform 0.3s ease; /* تأثير التمرير */
+}
+
+/* تأثير عند التمرير */
+.timeline ul li:hover {
+  transform: translateX(10px); /* حركة صغيرة لجذب الانتباه */
+}
+
+/* تصميم النقاط */
+.timeline ul li::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background-color: black; /* لون النقاط */
+  border-radius: 50%;
+  border: 3px solid #fff; /* إطار أبيض حول النقاط */
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); /* ظل خفيف للنقاط */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* تأثير عند التمرير على النقاط */
+.timeline ul li:hover::before {
+  transform: scale(1.2); /* تكبير النقطة */
+  background-color: gold; /* تغيير اللون عند التمرير */
+}
+
+/* تصميم الخط بين النقاط */
+.timeline ul li::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  width: 2px;
+  height: 100%;
+  background-color: #ccc;
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+/* تغيير اللون عند التمرير على العنصر */
+.timeline ul li:hover::after {
+  background-color: gold; /* تغيير لون الخط عند التمرير */
+}
+
+/* إزالة الخط الأخير */
+.timeline ul li:last-child::after {
+  display: none;
+}
+
+/* تنسيق المحتوى */
+.timeline-content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* تأثير عند التمرير على المحتوى */
+.timeline ul li:hover .timeline-content {
+  transform: translateX(10px); /* حركة صغيرة للمحتوى */
+  opacity: 0.9; /* تقليل الشفافية */
+}
+
+/* تنسيق النص داخل المحتوى */
+.timeline-content h4 {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* إضافة تأثير ظهور عند التمرير */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline ul li {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.layout_padding {
+  padding: 75px 0;
+}
+
+.layout_padding2 {
+  padding: 45px 0;
+}
+
+.layout_padding2-top {
+  padding-top: 45px;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 45px;
+}
+
+.layout_padding-top {
+  padding-top: 75px;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 75px;
+}
+
+.heading_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.heading_container h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.heading_container h2::before,
+.heading_container h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 1px;
+  background-color: #fec016;
+}
+
+.heading_container h2::before {
+  left: -5px;
+  -webkit-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.heading_container h2::after {
+  right: -5px;
+  -webkit-transform: translate(100%, -50%);
+  transform: translate(100%, -50%);
+}
+
+/*header section*/
+.hero_area {
+  height: 100vh;
+  background-color: #b5caee;
+  background-image: url(../images/hero-bg5.JPG);
+  background-size: cover;
+}
+
+.sub_page .hero_area {
+  height: auto;
+}
+
+.sub_page .who_section.layout_padding {
+  padding-top: 0;
+}
+
+.hero_area.sub_pages {
+  height: auto;
+}
+
+.header_section .container-fluid {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.header_section .nav_container {
+  margin: 0 auto;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+  margin: 10px 30px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background-color: #ffffff;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: initial;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.user_option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.custom_nav-container .nav_search-btn {
+  background-image: url(../images/search-icon.png);
+  background-size: 22px;
+  background-repeat: no-repeat;
+  background-position-y: 7px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: none;
+}
+
+.navbar-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar-brand span {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.custom_nav-container {
+  z-index: 99999;
+  padding: 15px 0;
+}
+
+.custom_nav-container .navbar-toggler {
+  outline: none;
+}
+
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+  background-image: url(../images/menu.png);
+  background-size: 55px;
+}
+
+/*end header section*/
+/*end header section*/
+.slider_section {
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center; /* مركز العناصر أفقياً وعمودياً */
+  color: #ffffff;
+  position: relative; /* لإعطاء مرونة أكبر في إضافة عناصر */
+  overflow: hidden; /* لمنع خروج العناصر عن الحاوية */
+  font-family: "Roboto", sans-serif; /* استخدام خط احترافي */
+}
+
+.slider_section .detail-box {
+  text-align: center;
+  margin-bottom: 110px;
+}
+
+.slider_section .detail-box h1 {
+  font-size: 4rem;
+  font-weight: 700; /* زيادة سماكة الخط */
+  text-transform: uppercase;
+  letter-spacing: 3px; /* زيادة التباعد بين الأحرف */
+  line-height: 1.2; /* ضبط المسافة بين السطور */
+  background: linear-gradient(135deg, #b6862c, #ffd700, #ffdd55, #b6a346);
+  -webkit-background-clip: text; /* اقتصاص التدرج ضمن النص */
+  color: transparent; /* لتطبيق التدرج اللوني فقط على النص */
+  text-shadow: 5px 5px 20px rgba(255, 191, 0, 0.9); /* إضافة ظل خفيف للنص */
+  animation: fadeInUp 0.5s ease-in-out; /* تقليل مدة التحريك */
+}
+
+.slider_section .detail-box h3 {
+  font-size: 1rem;
+  font-weight: 400; /* زيادة سماكة الخط */
+  text-transform: uppercase;
+  letter-spacing: 3px; /* زيادة التباعد بين الأحرف */
+  line-height: 1.2; /* ضبط المسافة بين السطور */
+  background: linear-gradient(135deg, #ffb53e, #ffdc52); /* تدرج لوني ذهبي */
+  -webkit-background-clip: text; /* اقتصاص التدرج ضمن النص */
+  color: transparent; /* لتطبيق التدرج اللوني فقط على النص */
+  text-shadow: 5px 5px 20px rgba(255, 191, 0, 0.9); /* إضافة ظل خفيف للنص */
+  animation: fadeInUp 0.5s ease-in-out; /* تقليل مدة التحريك */
+}
+
+.slider_section .detail-box h2 {
+  font-size: 2rem;
+  font-weight: 600; /* زيادة سماكة الخط */
+  text-transform: uppercase;
+  letter-spacing: 3px; /* زيادة التباعد بين الأحرف */
+  line-height: 1.2; /* ضبط المسافة بين السطور */
+  background: linear-gradient(135deg, #fefefe, #ffffff); /* تدرج لوني ذهبي */
+  -webkit-background-clip: text; /* اقتصاص التدرج ضمن النص */
+  color: transparent; /* لتطبيق التدرج اللوني فقط على النص */
+  text-shadow: 5px 5px 20px rgba(255, 255, 255, 0.9); /* إضافة ظل خفيف للنص */
+  animation: fadeInUp 0.4s ease-in-out; /* تقليل مدة التحريك */
+}
+
+.slider_section .detail-box p {
+  margin-top: 25px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out 0.5s forwards; /* تقليل مدة التحريك مع تأخير */
+}
+
+.slider_section .detail-box a {
+  width: fit-content;
+  display: block;
+  margin: auto;
+  padding: 10px 55px;
+  background-color: #ffffff00;
+  border: 1px solid darkgoldenrod;
+  color: #ffffff;
+  border-radius: 20px 20px 0 20px;
+  margin-top: 35px;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out 0.9s forwards; /* تقليل مدة التحريك مع تأخير */
+}
+
+.slider_section .detail-box a:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.slider_section #carouselExampleIndicators {
+  bottom: 0;
+}
+
+.slider_section #carouselExampleIndicators li {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 3px solid #ffffff;
+  border-radius: 100%;
+  opacity: 1;
+}
+
+/* إعدادات التحريك */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.do_section .heading_container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.do_section .do_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.do_section .do_container .box {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  margin: 35px 25px 0 25px;
+}
+
+.do_section .do_container .box .img-box {
+  width: 120px;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #353434;
+  border-radius: 100%;
+}
+
+.do_section .do_container .box .img-box img {
+  width: 45px;
+}
+
+.do_section .do_container .box .detail-box {
+  margin-top: 35px;
+}
+
+.do_section .do_container .box:hover .img-box {
+  background-color: #fec016;
+}
+
+.do_section .do_container .arrow_bg::before {
+  content: "";
+  position: absolute;
+  top: -23px;
+  left: -17px;
+  width: 262%;
+  height: 90%;
+  z-index: 3;
+  background-size: cover;
+}
+
+.do_section .do_container .arrow-start::before {
+  background-image: url(../images/arrow-start.png);
+}
+
+.do_section .do_container .arrow-middle::before {
+  background-image: url(../images/arrow-middle.png);
+}
+
+.do_section .do_container .arrow-end::before {
+  background-image: url(../images/arrow-end.png);
+}
+
+.who_section .row {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.who_section .img-box img {
+  width: 100%;
+}
+
+.who_section .detail-box {
+  margin-left: 65px;
+}
+
+.who_section .detail-box p {
+  margin-top: 35px;
+}
+
+.who_section .detail-box a {
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #353434;
+  border: 1px solid #353434;
+  color: #ffffff;
+  border-radius: 20px 20px 0 20px;
+  margin-top: 35px;
+}
+
+.who_section .detail-box a:hover {
+  background-color: transparent;
+  color: #353434;
+}
+
+/* تنسيق القسم */
+.work_section {
+  margin: 30px 0px 20px 0px;
+  padding: 40px 0;
+  background-color: #f5f5f5; /* لون خلفي خفيف */
+}
+
+/* تنسيق الحاوية */
+.work_section .work_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%; /* مساحة بين العناصر */
+  margin: 0 auto;
+  max-width: 1200px; /* عرض ثابت للحاوية */
+  padding: 20px;
+  justify-content: center;
+}
+
+/* تنسيق الصناديق */
+.work_section .work_container .box {
+  min-width: 250px;
+  flex: 1;
+  background-color: #ffffff; /* خلفية بيضاء */
+  border-radius: 10px; /* زوايا مستديرة */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ظل خفيف لإضافة عمق */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* انتقال ناعم للحركة والظل */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  max-width: 350px; /* حد أقصى للعرض للحفاظ على التناسق */
+}
+
+/* تأثير عند التمرير */
+.work_section .work_container .box:hover {
+  transform: translateY(-5px); /* رفع العنصر قليلاً */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* زيادة الظل عند التمرير */
+}
+
+/* تنسيق الصور */
+.work_section .work_container .box img {
+  width: 90%; /* الحفاظ على عرض الصورة داخل الصندوق */
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px; /* زوايا مستديرة للصورة */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* تأثير للحركة */
+}
+
+.work_section .work_container .box:hover img {
+  opacity: 0.95; /* تقليل الشفافية قليلاً */
+  transform: scale(1.03); /* تكبير طفيف للصورة عند التمرير */
+}
+
+/* تخصيص عرض بعض العناصر */
+.work_section .work_container .box.b-2,
+.work_section .work_container .box.b-3,
+.work_section .work_container .box.b-1,
+.work_section .work_container .box.b-4 {
+  width: 5%;
+  max-width: 5%; /* الحفاظ على الأبعاد الأصلية */
+}
+
+.client_section {
+  padding-bottom: 150px;
+}
+
+.client_section .heading_container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.client_section .box {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.client_section .box .img-box {
+  width: 60px;
+}
+
+.client_section .box .img-box img {
+  width: 100%;
+}
+
+.client_section .box .detail-box {
+  margin-top: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.client_section .box .detail-box h5 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.client_section .box .detail-box h5 span {
+  text-transform: none;
+  font-size: 16px;
+  font-weight: normal;
+  color: #fec016;
+}
+
+.client_section .box .detail-box img {
+  width: 15px;
+  margin: 35px 0;
+}
+
+.client_section .carousel-wrap {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.client_section .owl-nav > div {
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev,
+.client_section .owl-carousel .owl-nav .owl-next {
+  width: 50px;
+  height: 50px;
+  background-color: #000000;
+  background-size: 16px;
+  background-position: center;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -75px;
+  outline: none;
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev:hover,
+.client_section .owl-carousel .owl-nav .owl-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.client_section .owl-carousel .owl-nav .owl-prev {
+  background-image: url(../images/prev.png);
+  left: 50%;
+  -webkit-transform: translateX(-102%);
+  transform: translateX(-102%);
+}
+
+.client_section .owl-carousel .owl-nav .owl-next {
+  right: 50%;
+  background-image: url(../images/next.png);
+  -webkit-transform: translateX(102%);
+  transform: translateX(102%);
+}
+
+.client_section .owl-carousel .owl-dots.disabled,
+.client_section .owl-carousel .owl-nav.disabled {
+  display: block;
+}
+
+.client_section .owl-item.active.center .box {
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.target_section {
+  background-image: url(../images/target-bg.jpg);
+  background-size: cover;
+  color: #ffffff;
+  text-align: center;
+}
+
+.target_section .detail-box {
+  margin: 30px 0;
+}
+
+.target_section h2 {
+  font-weight: bold;
+}
+
+.target_section h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* contact section */
+.contact_section .heading_container {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contact_section .contact-form {
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.contact_section .contact-form input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+}
+
+.contact_section .contact-form input.input_message {
+  height: 175px;
+}
+
+.contact_section .contact-form input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.contact_section .contact-form input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.contact_section .contact-form input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.contact_section .contact-form input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.contact_section .contact-form button {
+  border: none;
+  outline: none;
+  padding: 12px 50px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  background-color: #fec913;
+  color: #fff;
+  border-radius: 30px;
+}
+
+.contact_section .map_img-box {
+  width: 80%;
+  margin: 25px auto 0 auto;
+}
+
+.contact_section .map_img-box img {
+  width: 100%;
+}
+
+/* end contact section */
+.info_section {
+  background-image: url(../images/footer.jpg); /* ضع مسار الصورة هنا */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 90px 0 45px 0;
+}
+
+.info_section h5 {
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.info_section .info_insta .insta_container > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.info_section .info_insta .insta_container img {
+  width: 100%;
+}
+
+.info_section .info_insta .insta_container .insta-box {
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: #ffffff;
+  padding: 10px 20px;
+}
+
+.info_section .info_contact .img-box {
+  width: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.info_section .info_contact p {
+  margin: 0;
+}
+
+.info_section .info_contact > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.info_section .info_contact > div img {
+  height: auto;
+  margin-right: 12px;
+}
+
+.info_section .info_form form input {
+  outline: none;
+  width: 100%;
+  padding: 7px 10px;
+}
+
+.info_section .info_form form button {
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #fbca47;
+  border: 1px solid #fbca47;
+  color: #ffffff;
+  margin-top: 15px;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.info_section .info_form form button:hover {
+  background-color: transparent;
+  color: #fbca47;
+}
+
+.info_section .info_form .social_box {
+  margin-top: 35px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.info_section .info_form .social_box a {
+  margin-right: 25px;
+}
+
+/* footer section*/
+.footer_section {
+  background-color: #232323;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.footer_section p {
+  padding: 20px 65px;
+  color: #fbfcfd;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #ffffff;
+}
+
+.footer_section a {
+  color: #fbfcfd;
+}
+
+/* end footer section*/
+/*# sourceMappingURL=style.css.map */
